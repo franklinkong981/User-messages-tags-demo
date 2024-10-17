@@ -1,0 +1,19 @@
+{
+  "name": "user-messages-tags-demo",
+  "version": "1.0.0",
+  "description": "Demo code that demonstrates Node-pg relationships.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "jest": "^29.7.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.13.0",
+    "supertest": "^7.0.0"
+  }
+}
