@@ -16,5 +16,18 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get('/:id', async (req, res, next) => {
+  const {id} = req.params;
+  try {
+    const userResults = await db.query(`SELECT name, type FROM users WHERE id = $1`, [id]);
+    const msgResults = await db.query(`SELECT id, msg FROM messages WHERE user_id = $1`, [id]);
+    const user = userResults.rows[0];
+    user.messages = msgResults.rows;
+    return res.status(200).json(user);
+  } catch (e) {
+    return next(e);
+  }
+});
+
 
 module.exports = router;

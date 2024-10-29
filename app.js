@@ -8,9 +8,9 @@ const ExpressError = require('./expressError');
 app.use(express.json());
 
 const uRoutes = require('./routes/users');
-//const mRoutes = require('./routes/messages');
+const mRoutes = require('./routes/messages');
 app.use('/users', uRoutes);
-//app.use('/messages', mRoutes);
+app.use('/messages', mRoutes);
 
 /** 404 handler */
 
